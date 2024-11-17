@@ -69,6 +69,7 @@ main {
     text-align: center;
 /*Se agrego para que baje el footer*/
     flex: 1;
+    
 }
 
 main .main-logo{
@@ -85,6 +86,7 @@ main .main-input {
     width: 530px;
     margin: 0 auto;
     margin-bottom: 35px;
+    
 }
 
 main .main-input-container {
@@ -95,16 +97,23 @@ main .main-input-container {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    
 }
+
 main .main-input input {
     width: 450px;
     height: 40px;
     border: none;
     outline: none;
     font-size: 14px;
+
     background-color: #303134;
+    /* borde interno*/
+    border-radius: 10px;
+    /*Search-google white and center*/
+    text-align: center;
+
 }
+
 main .search-icon {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png');
     background-repeat: no-repeat;
@@ -113,32 +122,54 @@ main .search-icon {
     width: 18px;
     height: 18px;
     margin-right: 10px;
+    margin-left: 10px;
+
     
 }
 
-
-main .main-input .micro-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/726px-Google_mic.svg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 18px;
-    height: 18px;
+/*CAMERA */
+/* Estilo para el ícono de la cámara */
+main .main-input .camera-icon {
+    display: inline-block;
+    margin-left: 10px; /* Espaciado entre el ícono de la cámara y el micrófono */
     cursor: pointer;
-    margin-left: 10px;
+    text-decoration: none; /* Elimina cualquier subrayado */
+    color: #5f6368; /* Color gris para el enlace */
+    margin-right: 10px;
 }
+main .main-input .micro-icon {
+    display: inline-block;
+    margin-left: 0px; /* Espaciado entre el ícono de la cámara y el micrófono */
+    cursor: pointer;
+    text-decoration: none; /* Elimina cualquier subrayado */
+    color: #5f6368; /* Color gris para el enlace */
+    margin-right: 10px;
+}
+
+/* Opcional: Para hacer el ícono un poco más pequeño */
+main .main-input .camera-icon svg {
+    width: 24px; /* Ajusta el tamaño del ícono */
+    height: 24px;
+    fill: #666666; /* Gris para el ícono */
+}
+main .main-input .micro-icon svg {
+    width: 24px; /* Ajusta el tamaño del ícono */
+    height: 24px;
+    fill: #666666; /* Gris para el ícono */
+}
+
+
 
 /* Button Styles */
 main .main-buttons {
     width: 530px;
     margin: 0 auto;
-}
-main .main-buttons profe{
-    color: white;
+    
 }
 
 main .main-buttons div {
     display: inline-block;
+    
 }
 
 main .main-buttons button {
@@ -151,6 +182,7 @@ main .main-buttons button {
     padding: 0 15px;
     margin-right: 15px;
     cursor: pointer;
+    
 }
 
 main .main-buttons button:hover {
@@ -158,30 +190,52 @@ main .main-buttons button:hover {
     box-shadow: 0 1px 1px #000001;
     background-color: white;
     color: #222;
+    
 }
+/*cambiar a blanco el color de mi boton */
 main .button-link a {
     color: white;
     text-decoration: none;
 }
-/* Footer Styles */
+/* Footer base */
 footer {
-    background-color: #171717;
-    padding: 15px 0;
+    background-color: #171717; /* Fondo oscuro */
+    color: white;             /* Texto blanco */
+    padding: 15px 20px;       /* Espaciado interno */
+    text-align: center;       /* Centra el contenido */
+    display: flex;            /* Usamos flexbox */
+    flex-wrap: wrap;          /* Permite que los elementos pasen a la siguiente fila si no caben */
+    justify-content: center;  /* Centra horizontalmente */
+    gap: 20px;                /* Espaciado entre enlaces */
+    font-size: 14px;          /* Tamaño de texto */
+    width: 100%;              /* Ocupa todo el ancho */
+    box-sizing: border-box;   /* Asegura que padding no afecte el tamaño */
 }
 
-footer .footer-links ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-footer .footer-links li {
-    margin: 0 10px;
-}
-
-footer .footer-links a {
-    text-decoration: none;
+/* Estilo para los enlaces */
+footer a {
+    text-decoration: none; /* Quita subrayado */
     color: white;
+    transition: color 0.3s ease;
+    white-space: nowrap;   /* Evita que el texto se corte en varias líneas */
+}
+
+footer a:hover {
+    color: #bbbbbb; /* Cambio de color al pasar el mouse */
+}
+
+/* Reglas responsivas */
+@media (max-width: 768px) { /* Para tablets y móviles */
+    footer {
+        font-size: 12px;  /* Reduce tamaño de texto */
+        gap: 15px;        /* Reduce el espaciado entre enlaces */
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) { /* Para móviles pequeños */
+    footer {
+        flex-direction: column; /* Coloca los enlaces en una sola columna */
+        gap: 10px;              /* Reduce aún más el espaciado */
+    }
 }
