@@ -197,45 +197,48 @@ main .button-link a {
     color: white;
     text-decoration: none;
 }
-/* Footer base */
+/* Footer base actualizado */
 footer {
     background-color: #171717; /* Fondo oscuro */
     color: white;             /* Texto blanco */
     padding: 15px 20px;       /* Espaciado interno */
-    text-align: center;       /* Centra el contenido */
+    text-align: center;       /* Centra el contenido inicialmente */
     display: flex;            /* Usamos flexbox */
+    justify-content: space-between; /* Espaciado entre los grupos */
     flex-wrap: wrap;          /* Permite que los elementos pasen a la siguiente fila si no caben */
-    justify-content: center;  /* Centra horizontalmente */
-    gap: 20px;                /* Espaciado entre enlaces */
     font-size: 14px;          /* Tamaño de texto */
     width: 100%;              /* Ocupa todo el ancho */
     box-sizing: border-box;   /* Asegura que padding no afecte el tamaño */
 }
 
-/* Estilo para los enlaces */
+/* Grupos de enlaces */
+footer .footer-left, footer .footer-right {
+    display: flex;           /* Flexbox para alinear los elementos del grupo */
+    flex-wrap: wrap;         /* Permite que los elementos del grupo pasen a la siguiente fila si es necesario */
+    gap: 20px;               /* Espaciado entre los enlaces */
+}
+
+/* Enlaces del footer */
 footer a {
-    text-decoration: none; /* Quita subrayado */
+    text-decoration: none;   /* Quita subrayado */
     color: white;
     transition: color 0.3s ease;
-    white-space: nowrap;   /* Evita que el texto se corte en varias líneas */
+    white-space: nowrap;     /* Evita que el texto se corte en varias líneas */
 }
 
 footer a:hover {
-    color: #bbbbbb; /* Cambio de color al pasar el mouse */
+    color: #bbbbbb;          /* Cambio de color al pasar el mouse */
 }
 
 /* Reglas responsivas */
 @media (max-width: 768px) { /* Para tablets y móviles */
     footer {
-        font-size: 12px;  /* Reduce tamaño de texto */
-        gap: 15px;        /* Reduce el espaciado entre enlaces */
-        padding: 10px 15px;
+        flex-direction: column; /* Coloca los grupos en una columna */
+        align-items: center;    /* Centra los elementos */
     }
-}
 
-@media (max-width: 480px) { /* Para móviles pequeños */
-    footer {
-        flex-direction: column; /* Coloca los enlaces en una sola columna */
-        gap: 10px;              /* Reduce aún más el espaciado */
+    footer .footer-left, footer .footer-right {
+        justify-content: center; /* Centra los elementos dentro de los grupos */
+        gap: 15px;
     }
 }
